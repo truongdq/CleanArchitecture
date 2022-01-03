@@ -1,0 +1,10 @@
+CleanArchitecture/CleanArchitecture.API/bin/
+*.v2
+*.suo
+CleanArchitecture/CleanArchitecture.API/obj/
+CleanArchitecture/CleanArchitecture.Application/bin/
+CleanArchitecture/CleanArchitecture.Application/obj/
+CleanArchitecture/CleanArchitecture.Domain/bin/
+CleanArchitecture/CleanArchitecture.Domain/obj/
+CleanArchitecture/CleanArchitecture.Infrastructure/bin/
+CleanArchitecture/CleanArchitecture.Infrastructure/obj/

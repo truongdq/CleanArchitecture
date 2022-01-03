@@ -1,0 +1,70 @@
+#---------------------------------#
+# project section -  Used for shared variables through out the configuration file
+#---------------------------------#
+project:
+  # the root namespace for the project
+  namespace: 'CleanArchitecture'
+  # the root directory for the project
+  directory: .\
+
+#---------------------------------#
+# data section -  Used for configuring database connections
+#---------------------------------#
+database:
+  # the connection string to the database
+  #connectionString: 'server=192.168.10.66;database=F88_LOS_Dev;UId=root;Password=P@ssw0rd;TreatTinyAsBoolean=true;'
+  connectionString: 'server=los-dev.cluster-chbw2k7sy5pl.ap-southeast-1.rds.amazonaws.com;database=CleanArchitecture;UId=admin;Password=HvuAGJ6HzbimtLJnLNKZ;TreatTinyAsBoolean=true;'
+  # the database provider name.  Default: SqlServer
+  provider: MySQL
+
+#---------------------------------#
+# data section - controls the generated files for Entity Framework
+#---------------------------------#
+data:
+  # data context file configuration
+  context:
+    name: 'CleanArchitectureContext'          # the data context class name
+    baseClass: DbContext                    # the data context base class name
+    namespace: '{Project.Namespace}.Data'   # the data context namespace
+    directory: '{Project.Directory}\CleanArchitecture.Infrastructure\Persistence'   # the data context output directory
+    
+    #include XML documentation
+    document: true
+
+  # entity class file configuration
+  entity:
+    namespace: '{Project.Namespace}.Data.Entities'  # the entity class namespace
+    directory: '{Project.Directory}\CleanArchitecture.Domain\Persistence\Entities'  # the entity class output directory
+    
+    #include XML documentation
+    document: true
+
+  # mapping class file configuration
+  mapping:
+    namespace: '{Project.Namespace}.Data.Mapping'   # the mapping class namespace
+    directory: '{Project.Directory}\CleanArchitecture.Infrastructure\Persistence\Mapping'   # the mapping class output directory
+    
+    #include XML documentation
+    document: true
+
+# #---------------------------------#
+# # model section - controls the optional view model generation
+# #---------------------------------#
+# model:
+  # # shared options between read, create and update models
+  # shared:
+    # namespace: '{Project.Namespace}.Domain.Models' # the model class namespace#    directory: '{Project.Directory}\F88.Mobility.AppPosNew.Domain\Models' # the mapping class output directory
+
+  # # read view model class configuration
+  # read:
+    # generate: true                  # generate read model class files
+    # name: '{Entity.Name}ReadModel'  # the read model class name
+    # namespace: '{Project.Namespace}.Domain.Models'
+    # directory: '{Project.Directory}\F88.Mobility.LOS.Domain\Models'
+
+  # # create view model class configuration
+  # create:
+    # generate: true                      # generate create model class files
+    # name: '{Entity.Name}WriteModel'    # the create model class name
+    # namespace: '{Project.Namespace}.Domain.Models'
+    # directory: '{Project.Directory}\F88.Mobility.LOS.Domain\Models'
